@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Lab by-products you do not want in the repo
+backup.tar
+backup.tar.gz
+restore_test/
+backup_test/
+packages.txt

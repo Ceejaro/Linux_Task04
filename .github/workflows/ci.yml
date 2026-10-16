@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  markdown-lint:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: "**/*.md"
+
+  shellcheck:
+    name: ShellCheck scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run shellcheck
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y shellcheck
+          shellcheck scripts/*.sh
+
+  screenshots:
+    name: Check screenshots exist
+    runs-on: ubuntu-latest
+    # Reports missing images as a warning without failing the build
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify README image references
+        run: bash scripts/check_screenshots.sh
