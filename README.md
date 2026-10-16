@@ -9,8 +9,8 @@
 A documented walkthrough of a 10-activity Linux practical test, completed on **Kali Linux** using the command line.
 Every activity includes the commands run, an explanation of each command, screenshots as evidence, key takeaways, and the problems encountered along the way.
 
-> **Author:** YOUR NAME  
-> **Date completed:** DD Month YYYY  
+> Author: Chijioke Kelvin Ukpai 
+> **Date completed:** 16 October 2016  
 > **Environment:** Kali Linux (VM or bare metal), user `kali`, shell `zsh`
 
 ---
